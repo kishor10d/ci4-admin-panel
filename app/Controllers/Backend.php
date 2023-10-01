@@ -24,7 +24,7 @@ class Backend extends BaseController
 	 * This function used to check the user is logged in or not
 	 */
 	function isLoggedIn() {
-        
+
 		$isLoggedIn = session()->get ( 'isLoggedIn' );
 		
 		if (! isset ( $isLoggedIn ) || $isLoggedIn != TRUE) {   
@@ -55,7 +55,7 @@ class Backend extends BaseController
      * @param {mixed} $footerInfo : This is array of footer information
      * @return {null} $result : null
      */
-    function loadViews($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
+    function loadViews($viewName = "", $headerInfo = [], $pageInfo = [], $footerInfo = []){
 		// pre($this->global); die;
         echo view('templates/header', $headerInfo);
         echo view($viewName, $pageInfo);
