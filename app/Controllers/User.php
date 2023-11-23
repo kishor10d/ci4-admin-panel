@@ -14,4 +14,8 @@ class User extends Backend
         
     }
 
+    public function index() {
+        $this->loadViews('users/index');
+    }
+
 }
