@@ -61,4 +61,13 @@ class Backend extends BaseController
         echo view($viewName, $pageInfo);
         echo view('templates/footer', $footerInfo);
     }
+
+	/**
+	 * This method used to logout from application
+	 */
+	public function logout()
+	{
+		session()->destroy();
+		return redirect()->to('login');
+	}
 }

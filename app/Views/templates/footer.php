@@ -16,12 +16,12 @@
 <!-- jQuery -->
 <script src="<?= base_url() ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/adminlte/plugins/moment/moment.min.js"></script>
+<script src="<?= base_url() ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>assets/adminlte/plugins/moment/moment.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="../../assets/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="<?= base_url() ?>assets/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 
 <!-- AdminLTE App -->
-<script src="../../assets/adminlte/lte/js/adminlte.js"></script>
+<script src="<?= base_url() ?>assets/adminlte/lte/js/adminlte.js"></script>
 </body>
 </html>

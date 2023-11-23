@@ -11,4 +11,5 @@ $routes->post('/', 'Login::index');
 
 // $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter'=>'auth']);
+$routes->get('/logout', 'User::logout');
 
