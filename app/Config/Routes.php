@@ -9,7 +9,5 @@ $routes->get('/', 'Login::index');
 $routes->get('/login', 'Login::index');
 $routes->post('/', 'Login::index');
 
-// $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter'=>'auth']);
-$routes->get('/logout', 'User::logout');
-
+$routes->get('/logout', 'User::logout', ['filter'=>'auth']);

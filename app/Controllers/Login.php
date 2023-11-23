@@ -38,7 +38,13 @@ class Login extends BaseController
             }
         }
 
-        echo view('users/login', $data);
+        // $this->isLoggedIn();
+
+        if($this->isLoggedIn()) {
+            return redirect()->to('dashboard');
+        } else {
+            echo view('users/login', $data);
+        }
     }
 
     private function setUser($user) {
@@ -52,5 +58,12 @@ class Login extends BaseController
         
         session()->set($sessionArray);
         return true;
+    }
+
+    private function isLoggedIn()
+    {
+        $isLoggedIn = session()->get('isLoggedIn');
+
+        return $isLoggedIn;
     }
 }

@@ -115,7 +115,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -143,7 +143,25 @@
                 </a>
               </li>
             </ul>
-          </li>          
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>Dummy Menu 1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <p>Dummy Menu 2</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>users" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Users</p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
