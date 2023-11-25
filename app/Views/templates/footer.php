@@ -20,6 +20,7 @@
 <script src="<?= base_url() ?>assets/adminlte/plugins/moment/moment.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="<?= base_url() ?>assets/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<?php if (!empty($plugin) && in_array('dataTables', $plugin)) { ?>
 <!-- DataTables  & Plugins -->
 <script src="<?= base_url() ?>assets/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>assets/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -27,6 +28,7 @@
 <script src="<?= base_url() ?>assets/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>assets/adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?= base_url() ?>assets/adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<?php } ?>
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>assets/adminlte/lte/js/adminlte.js"></script>
 <script type="text/javascript">
@@ -38,6 +40,14 @@
     var y= $('a[href="'+windowURL+'"]');
         y.addClass('active');
         y.parent().addClass('active');
+</script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "info": true, "ordering": true,"paging": true
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
 </script>
 </body>
 </html>

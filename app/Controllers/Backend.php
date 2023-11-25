@@ -56,7 +56,7 @@ class Backend extends BaseController
      * @return {null} $result : null
      */
     function loadViews($viewName = "", $headerInfo = [], $pageInfo = [], $footerInfo = []){
-		// pre($this->global); die;
+		
         echo view('templates/header', $headerInfo);
         echo view($viewName, $pageInfo);
         echo view('templates/footer', $footerInfo);
@@ -69,5 +69,41 @@ class Backend extends BaseController
 	{
 		session()->destroy();
 		return redirect()->to('login');
+	}
+
+	protected function cssBody($cssType) {
+		$cssBody = '';
+		$dataTableCSS = [
+			'adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css',
+			'adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css',
+			'adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css'
+		];
+
+		if ($cssType == 'dataTables') {
+			foreach ($dataTableCSS as $css) {
+				$cssBody .= '<link rel="stylesheet" href="'. base_url("assets/") .$css.'">';
+			}
+		}
+		return $cssBody;
+	}
+
+	protected function jsBody($jsType) {
+		$jsBody = '';
+		$dataTableJS = [
+			'adminlte/plugins/datatables/jquery.dataTables.min.js',
+			'adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js',
+			'adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js',
+			'adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js',
+			'adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js',
+			'adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js'
+		];
+
+		if ($jsType == 'dataTables') {
+			echo "inside";
+			foreach ($dataTableJS as $js) {  
+				$url = base_url("assets/").$js;  
+				$jsBody .= "script></script>";
+			}
+		}
 	}
 }
