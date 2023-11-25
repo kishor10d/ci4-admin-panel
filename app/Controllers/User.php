@@ -14,8 +14,10 @@ class User extends Backend
         
     }
 
-    public function index() {
-        $this->loadViews('users/index');
+    public function index()
+    {
+        $headerInfo['plugin'] = ['dataTables'];
+        $this->loadViews('users/index', $headerInfo);
     }
 
 }
