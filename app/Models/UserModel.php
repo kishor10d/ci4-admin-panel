@@ -18,4 +18,15 @@ class UserModel extends Model {
     protected function beforeUpdate(array $data)  {
         return $data;
     }
+
+    public function getUsers()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+
+        $query = $builder->select('userId, email, name, mobile, createdDtm')
+            ->getWhere(['isDeleted'=>0]);
+
+        return $query->getResult();
+    }
 }

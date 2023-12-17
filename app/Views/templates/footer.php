@@ -45,7 +45,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "info": true, "ordering": true,"paging": true
+      "info": true, "ordering": true,"paging": true, "pageLength": 5
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
 </script>
