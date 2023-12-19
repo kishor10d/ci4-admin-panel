@@ -13,3 +13,4 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter'=>'auth']);
 $routes->get('/logout', 'User::logout', ['filter'=>'auth']);
 
 $routes->get('/users', 'User::index', ['filter'=>'auth']);
+$routes->get('/fetchUsers', 'User::fetchUsers');

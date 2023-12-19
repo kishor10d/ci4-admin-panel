@@ -22,47 +22,28 @@
     <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Created On</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <?php foreach($users as $record) { ?>
-                    <tr>
-                      <td><?= $record->userId ?></td>
-                      <td><?= $record->name ?></td>
-                      <td><?= $record->email ?></td>
-                      <td><?= $record->mobile ?></td>
-                      <td><?= $record->createdDtm ?></td>
-                    </tr>
-                  <?php } ?>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Created On</th>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+            <table id="userList" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Created On</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Created On</th>
+                  <th>Actions</th>
+                </tr>
+              </tfoot>
+            </table>
           </div>
           <!-- /.col -->
         </div>

@@ -43,10 +43,26 @@
 </script>
 <script>
   $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "info": true, "ordering": true,"paging": true, "pageLength": 5
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $("#userList").DataTable({
+      responsive: true, lengthChange: false, autoWidth: false,
+      info: true, ordering: true, paging: true, pageLength: 5,
+      processing: true,
+      serverSide: true,
+      stateSave: true,
+      ajax: {
+        url: '/fetchUsers'
+      },
+      columnDefs: [
+        {
+            data: null,
+            defaultContent: '<button class="btn btn-sm btn-info">'
+            + '<i class="fa fa-pencil-alt" aria-hidden="true"></i></button>&nbsp;'
+            + '<button class="btn btn-sm btn-warning"><i class="fa fa-eye" aria-hidden="true"></i></button>&nbsp;'
+            + '<button class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>',
+            targets: -1
+        }
+      ]
+    }).buttons().container().appendTo('#userList_wrapper .col-md-6:eq(0)');
   });
 </script>
 </body>

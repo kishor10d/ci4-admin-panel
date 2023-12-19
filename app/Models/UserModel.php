@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model {
 
     protected $table = 'tbl_users';
+    protected $primaryKey = 'userId';
     protected $allowedFields = ['email', 'password', 'name', 'mobile', 'roleId', 'isAdmin', 'updatedBy', 'updatedDtm'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
@@ -28,5 +29,16 @@ class UserModel extends Model {
             ->getWhere(['isDeleted'=>0]);
 
         return $query->getResult();
+    }
+
+    public function getUsersArray()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+
+        $query = $builder->select('userId, email, name, mobile, createdDtm')
+            ->getWhere(['isDeleted'=>0]);
+
+        return $query->getResult('array');
     }
 }
