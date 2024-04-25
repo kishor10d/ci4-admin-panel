@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => 'Admin@123',
         'database'     => 'cias4',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

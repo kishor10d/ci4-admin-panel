@@ -102,7 +102,7 @@ class Backend extends BaseController
 			echo "inside";
 			foreach ($dataTableJS as $js) {  
 				$url = base_url("assets/").$js;  
-				$jsBody .= "script></script>";
+				$jsBody .= "<script></script>";
 			}
 		}
 	}

@@ -46,4 +46,20 @@ class User extends Backend
 
         return $this->setResponseFormat('json')->respond($response);
     }
+
+    /**
+     * Loads user create page
+     */
+    public function create()
+    {   
+        $this->loadViews('users/create');
+    }
+
+    /**
+     * Loads user edit page
+     */
+    public function edit()
+    {   
+        $this->loadViews('users/edit');
+    }
 }
