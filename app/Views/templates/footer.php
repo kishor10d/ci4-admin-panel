@@ -56,7 +56,7 @@
       columnDefs: [
         {
             data: null,
-            defaultContent: '<a class="btn btn-sm btn-info" href="<?=site_url("users/edit") ?>">'
+            defaultContent: '<a class="btn btn-sm btn-info" href="<?=site_url("users/edit/") ?>">'
             + '<i class="fa fa-pencil-alt" aria-hidden="true"></i></a>&nbsp;'
             + '<button class="btn btn-sm btn-warning"><i class="fa fa-eye" aria-hidden="true"></i></button>&nbsp;'
             + '<button class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>',

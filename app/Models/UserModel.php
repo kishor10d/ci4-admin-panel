@@ -41,4 +41,47 @@ class UserModel extends Model {
 
         return $query->getResult('array');
     }
+
+    public function userListingCount($searchText = '') {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+
+        $builder->select('userId, email, name, mobile, createdDtm');
+        if(!empty($searchText)) {
+            $builder->orLike('email', $searchText);
+            $builder->orLike('name', $searchText);
+            $builder->orLike('mobile', $searchText);
+        }
+        $builder->getWhere(['isDeleted'=>0]);
+
+        return $builder->countAllResults();
+    }
+
+    public function userListing($page, $segment, $searchText = '') {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+
+        $builder->select('userId, email, name, mobile, createdDtm');
+        // if(!empty($searchText)) {
+        //     $builder->orLike('email', $searchText);
+        //     $builder->orLike('name', $searchText);
+        //     $builder->orLike('mobile', $searchText);
+        // }
+        $builder->where(['isDeleted'=>0]);
+        // $builder->limit($page, $segment);
+        $query = $builder->get();
+
+        return $query->getResult();
+    }
+
+    public function getUserById($userId)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+
+        $query = $builder->select('userId, email, name, mobile, createdDtm')
+            ->getWhere(['userId'=>$userId,'isDeleted'=>0]);
+
+        return $query->getResult();
+    }
 }
